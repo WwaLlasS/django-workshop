@@ -17,7 +17,6 @@ def home(request):
     if method == 'POST':
         post = request.POST
         files = request.FILES
-        print('technology>>', post.get('technology'))
         project_form = ProjectForm(post, files)
         if project_form.is_valid():
             project_form.save()

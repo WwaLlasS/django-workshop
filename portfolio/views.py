@@ -22,5 +22,7 @@ def home(request):
             project_form.save()
             return redirect('home')
         else:
+            projects = Project.objects.all()
             context['project_form'] = project_form
+            context['projects'] = projects
             return render(request, template, context)
